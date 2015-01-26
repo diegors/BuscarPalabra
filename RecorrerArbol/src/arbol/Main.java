@@ -15,38 +15,60 @@ public class Main {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-		Path p = Paths.get("C:/Users/I308172/Desktop/Mis Cosas/Java/ResourceKraft_workspace");
-		//Path p = Paths.get("C:/");
-		//= "C:/Users/I308172/Desktop/TEMPORAL";
-		//C:\Users\I308172\Desktop\Mis Cosas\Java\ResourceKraft_workspace
 		
-		Recorrer r = new Recorrer();
-		List<String> l = r.Ejecutar(p);
-	
-		System.out.println("********************************************************************************************");
 		
-		Leer lee = new Leer();
 		
-		Iterator<String> iter = l.iterator();
-		while (iter.hasNext()) 
-		{
-			//lista.add(iter.toString());
+        if (args.length > 0)
+        {
+        		
+//        	for (int i = 0; i < args.length; i++)
+//        	{
+//        		System.out.println(args[i]);
+//    
+//        		System.out.println(args[0].toString());
+//            	System.out.println(args.toString());
+//        	}
+        	
+        	String Spath = args[0].replace('\\', '/');
+        	
+        	
+        	//System.out.println("Spath : " + Spath);
+        	
+        	//Spath;
+        	
+        	Path p = Paths.get(Spath);
+        	
+        	System.out.println("Path : " + p.toString());
+        
+        
+		
+			Recorrer r = new Recorrer();
+			List<String> l = r.Ejecutar(p);
+		
+			System.out.println("********************************************************************************************");
+			
+			Leer lee = new Leer();
+			
+			Iterator<String> iter = l.iterator();
+			while (iter.hasNext()) 
+			{
+				//lista.add(iter.toString());
+				
+				
+			    String entrada = iter.next();
+			
+			    
+			    //System.out.println(entrada.toString());
+			    
+			    
+			    lee.ahora(entrada.toString(), "Runnable");
+			}
 			
 			
-		    String entrada = iter.next();
-		
-		    
-		    //System.out.println(entrada.toString());
-		    
-		    
-		    lee.ahora(entrada.toString(), "Runnable");
-		}
-		
-		
-		
-		System.out.println("*******************************END*************************************************************");
-		
-		
+			
+			System.out.println("*******************************END*************************************************************");
+			
+        }
 		
 	}
 
