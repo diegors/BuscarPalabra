@@ -61,7 +61,9 @@ public class Main {
 			    //System.out.println(entrada.toString());
 			    
 			    
-			    lee.ahora(entrada.toString(), "Runnable");
+			   // lee.ahora(entrada.toString(), "Runnable");
+			    
+			    lee.ahora(entrada.toString(), args[1]);
 			}
 			
 			
